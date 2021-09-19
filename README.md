@@ -1,5 +1,5 @@
 # FreeZXCTon
-[![Version](https://vsmarketplacebadge.apphb.com/version/FreeTON.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON)  [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/FreeTON.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON) [![Installs](https://vsmarketplacebadge.apphb.com/installs/FreeTON.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON) [![Rating](https://vsmarketplacebadge.apphb.com/rating-star/mytonwallet.solidity.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON#review-details)
+[![Version](https://vsmarketplacebadge.apphb.com/version/FreeTON.freeton-solidity-freezxcton.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON.freeton-solidity-freezxcton)  [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/FreeTON.freeton-solidity-freezxcton.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON.freeton-solidity-freezxcton) [![Installs](https://vsmarketplacebadge.apphb.com/installs/FreeTON.freeton-solidity-freezxcton.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON.freeton-solidity-freezxcton) [![Rating](https://vsmarketplacebadge.apphb.com/rating-star/mytonwallet.solidity.svg)](https://marketplace.visualstudio.com/items?itemName=FreeTON.freeton-solidity-freezxcton#review-details)
 
 # Description
 Free TON Solidity is the language used in Free TON to create smart contracts.
@@ -10,10 +10,8 @@ Code completion (keywords, variable names, classes names, method names, interfac
 Intellisense (commands, contracts, methods, interfaces)
 Extension is fully customizable by VS Code native settings.
 
-Marketplace: https://marketplace.visualstudio.com/items?itemName=FreeTON.freeton-solidity-freezxcton
 
 
+![Image alt](https://raw.githubusercontent.com/FreeZXCTon/FreeTON/main/screenshots/img1.jpg)
 
-![Image alt](https://github.com/FreeZXCTon/FreeTON/blob/main/screenshots/img1.jpg)
-
-![Image alt](https://github.com/FreeZXCTon/FreeTON/blob/main/screenshots/img2.jpg)
+![Image alt](https://raw.githubusercontent.com/FreeZXCTon/FreeTON/main/screenshots/img2.jpg)

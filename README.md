@@ -10,6 +10,8 @@ Code completion (keywords, variable names, classes names, method names, interfac
 Intellisense (commands, contracts, methods, interfaces)
 Extension is fully customizable by VS Code native settings.
 
+Marketplace: https://marketplace.visualstudio.com/items?itemName=FreeTON.freeton-solidity-freezxcton
+
 
 
 ![Image alt](https://github.com/FreeZXCTon/FreeTON/blob/main/screenshots/img1.jpg)

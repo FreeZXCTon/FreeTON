@@ -12,4 +12,6 @@ Extension is fully customizable by VS Code native settings.
 
 
 
-![Image alt](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)
+![Image alt](https://github.com/FreeZXCTon/FreeTON/blob/main/screenshots/img1.jpg)
+
+![Image alt](https://github.com/FreeZXCTon/FreeTON/blob/main/screenshots/img2.jpg)

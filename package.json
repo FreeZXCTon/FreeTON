@@ -1,0 +1,1119 @@
+{
+  "name": "FreeTON",
+  "displayName": "FreeTON Solidity VS",
+  "description": "Free TON Solidity Visual Studio Code",
+  "author": {
+    "name": "seypik",
+    "email": "seypik@gmail.com",
+    "url": "https://seypik.com/"
+  },
+  "version": "0.0.3",
+  "publisher": "Pruvendo",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.38.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "solidity",
+    "solc",
+    "sol",
+    "ton"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FreeZXCTon/FreeTON.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FreeZXCTon/FreeTON/issues"
+  },
+  "activationEvents": [
+    "onLanguage:solidity"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "solidity",
+        "aliases": [
+          "Solidity",
+          "solidity"
+        ],
+        "extensions": [
+          ".sol"
+        ],
+        "configuration": "./src/solidity.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "solidity",
+        "scopeName": "source.solidity",
+        "path": "./src/syntaxes/solidity.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "solidity",
+        "path": "./src/snippets/solidity.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Solidity configuration",
+      "properties": {
+        "solidity.intelliSense": {
+          "type": "array",
+          "default": [
+            {
+              "label": "uint[]",
+              "type": 1,
+              "kind": 25,
+              "data": [
+                {
+                  "label": "empty",
+                  "kind": "Function",
+                  "detail": "<array>.empty()",
+                  "documentation": "Returns status flag whether the array is empty (its length is 0).",
+                  "insertText": "empty()"
+                }
+              ],
+              "detail": "uint[]",
+              "documentation": "<array>",
+              "insertText": "uint[] "
+            },
+            {
+              "label": "bytes",
+              "type": 1,
+              "kind": 25,
+              "data": [
+                {
+                  "label": "empty",
+                  "kind": "Function",
+                  "detail": "<bytes>.empty()",
+                  "documentation": "Returns status flag whether the bytes is empty (its length is 0).",
+                  "insertText": "empty()"
+                },
+                {
+                  "label": "length",
+                  "kind": "Function",
+                  "detail": "<bytes>.length",
+                  "documentation": "Returns length of the byte array.",
+                  "insertText": "length"
+                },
+                {
+                  "label": "toSlice",
+                  "kind": "Function",
+                  "detail": "<bytes>.toSlice()",
+                  "documentation": "Converts bytes to TvmSlice.",
+                  "insertText": "toSlice()"
+                },
+                {
+                  "label": "dataSize",
+                  "kind": "Function",
+                  "detail": "<bytes>.dataSize(uint n)",
+                  "documentation": "Same as <TvmCell>.dataSize().",
+                  "insertText": "dataSize(${1}))"
+                },
+                {
+                  "label": "dataSizeQ",
+                  "kind": "Function",
+                  "detail": "<bytes>.dataSizeQ(uint n)",
+                  "documentation": "Same as <TvmCell>.dataSizeQ().",
+                  "insertText": "dataSizeQ(${1})"
+                },
+                {
+                  "label": "append",
+                  "kind": "Function",
+                  "detail": "<bytes>.append(bytes tail)",
+                  "documentation": "Modifies the bytes by concatenating tail bytes to the end of the bytes.",
+                  "insertText": "append(${1})"
+                }
+              ],
+              "detail": "bytes",
+              "documentation": "Bytes is array of byte. It is similar to byte[], but they are encoded in different ways.",
+              "insertText": "bytes "
+            },
+            {
+              "label": "string",
+              "type": 1,
+              "kind": 25,
+              "data": [
+                {
+                  "label": "empty",
+                  "kind": "Function",
+                  "detail": "<string>.empty()",
+                  "documentation": "Returns status flag whether the string is empty (its length is 0).",
+                  "insertText": "empty()"
+                },
+                {
+                  "label": "byteLength",
+                  "kind": "Function",
+                  "detail": "<string>.byteLength()",
+                  "documentation": "Returns byte length of the string data.",
+                  "insertText": "byteLength()"
+                },
+                {
+                  "label": "substr",
+                  "kind": "Function",
+                  "detail": "<string>.substr(uint from[, uint count])",
+                  "documentation": "Returns a substring starting from the byte with number from with byte length count.\n\nNote: if count is not set, then the new string will be cut from the from byte to the end of the string.",
+                  "insertText": "substr(${1})"
+                },
+                {
+                  "label": "append",
+                  "kind": "Function",
+                  "detail": "<string>.append(string tail)",
+                  "documentation": "Appends the tail string to the string.",
+                  "insertText": "append(${1})"
+                },
+                {
+                  "label": "find",
+                  "kind": "Function",
+                  "detail": "<string>.find(bytes1 symbol)\n\n<string>.find(string substr)",
+                  "documentation": "Looks for symbol (or substring) in the string and returns index of the first occurrence. If there is no such symbol in the string, empty optional is returned.",
+                  "insertText": "find(${1})"
+                },
+                {
+                  "label": "findLast",
+                  "kind": "Function",
+                  "detail": "<string>.findLast(bytes1 symbol)",
+                  "documentation": "Looks for symbol (or substring) in the string and returns index of the last occurrence. If there is no such symbol in the string, empty optional is returned.",
+                  "insertText": "findLast(${1})"
+                }
+              ],
+              "detail": "string",
+              "documentation": "<string>",
+              "insertText": "string "
+            },
+            {
+              "label": "TvmCell",
+              "type": 1,
+              "kind": 25,
+              "data": [
+                {
+                  "label": "depth",
+                  "kind": "Function",
+                  "detail": "<TvmCell>.depth()",
+                  "documentation": "Returns the depth of TvmCell c. If c has no references, then d = 0; otherwise d is one plus the maximum of depths of cells referred to from c. If c is a Null instead of a Cell, returns zero.",
+                  "insertText": "depth()"
+                },
+                {
+                  "label": "dataSize",
+                  "kind": "Function",
+                  "detail": "<TvmCell>.dataSize(uint n)",
+                  "documentation": "Returns the count of distinct cells, data bits in the distinct cells and cell references in the distinct cells. If count of the distinct cells exceeds n+1 then a cell overflow exception (8) is thrown.\nThis function is a wrapper for opcode \"CDATASIZE\"",
+                  "insertText": "dataSize(${1})"
+                },
+                {
+                  "label": "dataSizeQ",
+                  "kind": "Function",
+                  "detail": "<TvmCell>.dataSizeQ(uint n)",
+                  "documentation": "Returns the count of distinct cells, data bits in the distinct cells and cell references in the distinct cells. If count of the distinct cells exceeds n+1 then this function returns an optional that has no value.\nThis function is a wrapper for opcode \"CDATASIZEQ\"",
+                  "insertText": "dataSizeQ(${1})"
+                },
+                {
+                  "label": "toSlice",
+                  "kind": "Function",
+                  "detail": "<TvmCell>.toSlice()",
+                  "documentation": "Converts the cell to a slice.",
+                  "insertText": "toSlice()"
+                }
+              ],
+              "detail": "TvmCell",
+              "documentation": "Represents TVM cell. (TVM - 1.1.3).",
+              "insertText": "TvmCell "
+            },
+            {
+              "label": "TvmSlice",
+              "type": 1,
+              "kind": 25,
+              "data": [
+                {
+                  "label": "empty",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.empty()",
+                  "documentation": "Checks whether a Slice is empty (i.e., contains no bits of data and no cell references).",
+                  "insertText": "empty()"
+                },
+                {
+                  "label": "size",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.size()",
+                  "documentation": "Returns number of data bits and references in the slice.",
+                  "insertText": "size()"
+                },
+                {
+                  "label": "dataSize",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.dataSize(uint n)",
+                  "documentation": "Returns the count of distinct cells, data bits in the distinct cells and cell references in the distinct cells. If count of the distinct cells exceeds n+1 then a cell overflow exception (8) is thrown.\n\nNote that the returned count of distinct cells does not take into account the cell that contains the slice itself.\n\nThis function is a wrapper for opcode SDATASIZE.",
+                  "insertText": "dataSize(${1})"
+                },
+                {
+                  "label": "dataSizeQ",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.dataSizeQ(uint n)",
+                  "documentation": "Returns the count of distinct cells, data bits in the distinct cells and cell references in the distinct cells. If count of the distinct cells exceeds n+1 then this function returns an optional that has no value. Note that the returned count of distinct cells does not take into account the cell that contains the slice itself.\n\nThis function is a wrapper for opcode SDATASIZEQ.",
+                  "insertText": "dataSizeQ(${1})"
+                },
+                {
+                  "label": "bits",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.bits()",
+                  "documentation": "Returns number of data bits in the slice.",
+                  "insertText": "bits()"
+                },
+                {
+                  "label": "refs",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.refs()",
+                  "documentation": "Returns number of references in the slice.",
+                  "insertText": "refs()"
+                },
+                {
+                  "label": "bitsAndRefs",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.bitsAndRefs()",
+                  "documentation": "Returns number of data bits and references in the slice.",
+                  "insertText": "bitsAndRefs()"
+                },
+                {
+                  "label": "depth",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.depth()",
+                  "documentation": "Returns the depth of the slice. If slice has no references, then 0 is returned, otherwise function result is one plus the maximum of depths of the cells referred to from the slice.",
+                  "insertText": "depth()"
+                },
+                {
+                  "label": "hasNBits",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.hasNBits(uint16 bits)",
+                  "documentation": "Checks whether the slice contains the specified amount of data bits and references.",
+                  "insertText": "hasNBits(${1})"
+                },
+                {
+                  "label": "hasNRefs",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.hasNRefs(uint8 bits)",
+                  "documentation": "Checks whether the slice contains the specified amount of data bits and references.",
+                  "insertText": "hasNRefs(${1})"
+                },
+                {
+                  "label": "hasNBitsAndRefs",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.hasNBitsAndRefs(uint16 bits, uint8 refs)",
+                  "documentation": "Checks whether the slice contains the specified amount of data bits and references.",
+                  "insertText": "hasNBitsAndRefs(${1})"
+                },
+                {
+                  "label": "compare",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.compare(TvmSlice other)",
+                  "documentation": "Lexicographically compares the slice and other data bits of the root slice and returns result as an integer:\n\n1 - slice > other\n\n0 - slice == other\n\n-1 - slice < other",
+                  "insertText": "compare(${1})"
+                },
+                {
+                  "label": "decode",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.decode(TypeA, TypeB, ...)",
+                  "documentation": "Supported types: uintN, intN, bytesN, bool, ufixedMxN, fixedMxN, address, contract, TvmCell, bytes, string, mapping, ExtraCurrencyCollection, array, optional and struct.\n\nLoads given types from the slice.",
+                  "insertText": "decode(${1})"
+                },
+                {
+                  "label": "loadRef",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.loadRef()",
+                  "documentation": "Loads a cell from the slice reference.",
+                  "insertText": "loadRef()"
+                },
+                {
+                  "label": "loadRefAsSlice",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.loadRefAsSlice()",
+                  "documentation": "Loads a cell from the slice reference and converts it into a slice.",
+                  "insertText": "loadRefAsSlice()"
+                },
+                {
+                  "label": "loadSigned",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.loadSigned(uint16 bitSize)",
+                  "documentation": "Loads a signed integer with the given bitSize from the slice.",
+                  "insertText": "loadSigned(${1})"
+                },
+                {
+                  "label": "loadUnsigned",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.loadUnsigned(uint16 bitSize)",
+                  "documentation": "Loads an unsigned integer with the given bitSize from the slice.",
+                  "insertText": "loadUnsigned(${1})"
+                },
+                {
+                  "label": "loadTons",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.loadTons()",
+                  "documentation": "Loads (deserializes) VarUInteger 16 and returns an unsigned 128-bit integer.",
+                  "insertText": "loadTons()"
+                },
+                {
+                  "label": "loadSlice",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.loadSlice(uint length)\n\n<TvmSlice>.loadSlice(uint length, uint refs)",
+                  "documentation": "Loads the first length bits and refs references from the slice into a separate slice.",
+                  "insertText": "loadSlice(${1})"
+                },
+                {
+                  "label": "decodeFunctionParams",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.decodeFunctionParams(Name)",
+                  "documentation": "Decodes parameters of the function or constructor (if contract type is provided). This function is usually used in onBounce function.",
+                  "insertText": "decodeFunctionParams(${1})"
+                },
+                {
+                  "label": "skip",
+                  "kind": "Function",
+                  "detail": "<TvmSlice>.skip(uint length)\n\n<TvmSlice>.skip(uint length, uint refs)",
+                  "documentation": "Skips the first length bits and refs references from the slice.",
+                  "insertText": "skip(${1})"
+                }
+              ],
+              "detail": "TvmSlice",
+              "documentation": "Represents TVM cell slice. (TVM - 1.1.3).",
+              "insertText": "TvmSlice "
+            },
+            {
+              "label": "TvmBuilder",
+              "type": 1,
+              "kind": 25,
+              "data": [
+                {
+                  "label": "toSlice",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.toSlice()",
+                  "documentation": "Converts the builder into a slice.",
+                  "insertText": "toSlice()"
+                },
+                {
+                  "label": "toCell",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.toCell()",
+                  "documentation": "Converts the builder into a cell.",
+                  "insertText": "toCell()"
+                },
+                {
+                  "label": "bits",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.bits()",
+                  "documentation": "Returns the number of data bits already stored in the builder.",
+                  "insertText": "bits()"
+                },
+                {
+                  "label": "refs",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.refs()",
+                  "documentation": "Returns the number of references already stored in the builder.",
+                  "insertText": "refs()"
+                },
+                {
+                  "label": "bitsAndRefs",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.bitsAndRefs()",
+                  "documentation": "Returns the number of data bits and references already stored in the builder.",
+                  "insertText": "bitsAndRefs()"
+                },
+                {
+                  "label": "remBits",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.remBits()",
+                  "documentation": "Returns the number of data bits that can still be stored in the builder.",
+                  "insertText": "remBits(})"
+                },
+                {
+                  "label": "remRefs",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.remRefs()",
+                  "documentation": "Returns the number of references that can still be stored in the builder.",
+                  "insertText": "remRefs()"
+                },
+                {
+                  "label": "remBitsAndRefs",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.remBitsAndRefs()",
+                  "documentation": "Returns the number of data bits and references that can still be stored in the builder.",
+                  "insertText": "remBitsAndRefs()"
+                },
+                {
+                  "label": "depth",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.depth()",
+                  "documentation": "Returns the depth of the builder. If no cell references are stored in the builder, then 0 is returned; otherwise function result is one plus the maximum of depths of cells referred to from the builder.",
+                  "insertText": "depth()"
+                },
+                {
+                  "label": "store",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.store(list_of_values)",
+                  "documentation": "Stores the list of values in the builder.",
+                  "insertText": "store(${1})"
+                },
+                {
+                  "label": "storeOnes",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.storeOnes(uint n)",
+                  "documentation": "Stores n binary ones into Builder.",
+                  "insertText": "storeOnes(${1})"
+                },
+                {
+                  "label": "storeZeroes",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.storeZeroes(uint n)",
+                  "documentation": "Stores n binary zeroes into Builder.",
+                  "insertText": "storeZeroes(${1})"
+                },
+                {
+                  "label": "storeSigned",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.storeSigned(int256 value, uint16 bitSize)",
+                  "documentation": "Stores a signed integer value with given bitSize in the builder.",
+                  "insertText": "storeSigned(${1})"
+                },
+                {
+                  "label": "storeUnsigned",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.storeUnsigned(int256 value, uint16 bitSize)",
+                  "documentation": "Stores an unsigned integer value with given bitSize in the builder.",
+                  "insertText": "storeUnsigned(${1})"
+                },
+                {
+                  "label": "storeRef",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.storeRef(TvmBuilder b)\n\n<TvmBuilder>.storeRef(TvmCell c)\n\n<TvmBuilder>.storeRef(TvmSlice s)",
+                  "documentation": "Stores TvmBuilder b/TvmCell c/TvmSlice c in the reference of the builder.",
+                  "insertText": "storeRef(${1})"
+                },
+                {
+                  "label": "storeTons",
+                  "kind": "Function",
+                  "detail": "<TvmBuilder>.storeTons(uint128 value)",
+                  "documentation": "Stores (serializes) an integer value and stores it in the builder as VarUInteger 16.",
+                  "insertText": "storeTons(${1})"
+                }
+              ],
+              "detail": "TvmBuilder",
+              "documentation": "Represents TTVM cell builder. (TVM - 1.1.3).",
+              "insertText": "TvmBuilder "
+            },
+            {
+              "label": "delete",
+              "kind": 5,
+              "data": [],
+              "detail": "Delete variables",
+              "documentation": "As in classic Solidity delete operation assigns the initial value for the type to a variable. Delete operation can be applied not only to variables itself, but to its fields or indexed values.",
+              "insertText": "delete "
+            },
+            {
+              "label": "msg",
+              "type": 0,
+              "kind": 10,
+              "data": [
+                {
+                  "label": "sender",
+                  "kind": "Function",
+                  "detail": "msg.sender",
+                  "documentation": "Returns:\n\nsender of the message for internal message.\n\naddress(0) for external message.\n\naddress(0) for tick/tock transaction.",
+                  "insertText": "sender"
+                },
+                {
+                  "label": "value",
+                  "kind": "Function",
+                  "detail": "msg.value",
+                  "documentation": "Returns:\n\nBalance of the inbound message in nanotons for internal message.\n\n0 for external message.\n\nUndefined value for tick/tock transaction.",
+                  "insertText": "value"
+                },
+                {
+                  "label": "currencies",
+                  "kind": "Function",
+                  "detail": "msg.currencies",
+                  "documentation": "Collections of arbitrary currencies contained in the balance of the inbound message.",
+                  "insertText": "currencies"
+                },
+                {
+                  "label": "pubkey",
+                  "kind": "Function",
+                  "detail": "msg.pubkey()",
+                  "documentation": "Returns sender's public key, obtained from the body of the external inbound message. If the message is not signed, msg.pubkey() returns 0. If the message is signed and message header (pragma AbiHeader) does not contain pubkey then msg.pubkey() is equal to tvm.pubkey().",
+                  "insertText": "pubkey()"
+                },
+                {
+                  "label": "isInternal",
+                  "kind": "Function",
+                  "detail": "msg.isInternal",
+                  "documentation": "Returns whether the contract is called by internal or external messages or by tick/tock transactions.",
+                  "insertText": "isInternal"
+                },
+                {
+                  "label": "isExternal",
+                  "kind": "Function",
+                  "detail": "msg.isExternal",
+                  "documentation": "Returns whether the contract is called by internal or external messages or by tick/tock transactions.",
+                  "insertText": "isExternal"
+                },
+                {
+                  "label": "isTickTock",
+                  "kind": "Function",
+                  "detail": "msg.isTickTock",
+                  "documentation": "Returns whether the contract is called by internal or external messages or by tick/tock transactions.",
+                  "insertText": "isTickTock"
+                },
+                {
+                  "label": "createdAt",
+                  "kind": "Function",
+                  "detail": "msg.createdAt",
+                  "documentation": "Returns a field created_at of the external inbound message.",
+                  "insertText": "createdAt"
+                },
+                {
+                  "label": "data",
+                  "kind": "Function",
+                  "detail": "msg.data",
+                  "documentation": "Returns a payload of the inbound message.",
+                  "insertText": "data"
+                }
+              ],
+              "detail": "msg",
+              "insertText": "msg"
+            },
+            {
+              "label": "tvm",
+              "type": 0,
+              "kind": 10,
+              "data": [
+                {
+                  "label": "accept",
+                  "kind": "Function",
+                  "detail": "tvm.accept()",
+                  "documentation": "Executes TVM instruction \"ACCEPT\" (TVM - A.11.2. - F800). This instruction sets current gas limit to its maximal allowed value. This action is required to process external messages, which bring no value.",
+                  "insertText": "accept()"
+                },
+                {
+                  "label": "commit",
+                  "kind": "Function",
+                  "detail": "tvm.commit()",
+                  "documentation": "Creates a \"check point\" of the state variables (by copying them from c7 to c4) and register c5. If the contract throws an exception at the computing phase then the state variables and register c5 will roll back to the \"check point\", and the computing phase will be considered \"successful\". If contract doesn't throw an exception, it has no effect.",
+                  "insertText": "commit()"
+                },
+                {
+                  "label": "rawCommit",
+                  "kind": "Function",
+                  "detail": "tvm.rawCommit()",
+                  "documentation": "Same as tvm.commit() but doesn't copy the state variables from c7 to c4. It's a wrapper for opcode COMMIT.",
+                  "insertText": "rawCommit()"
+                },
+                {
+                  "label": "getData",
+                  "kind": "Function",
+                  "detail": "tvm.getData()",
+                  "documentation": "It's an experimental function.\n\nA dual of the tvm.setData() returning value of c4 register. Getting a raw storage cell is useful when upgrading a new version of contract that introduces an altered data layout.",
+                  "insertText": "getData()"
+                },
+                {
+                  "label": "setData",
+                  "kind": "Function",
+                  "detail": "tvm.setData(TvmCell data)",
+                  "documentation": "It's an experimental function.\n\nSet cell data to register c4. Note, after returning from a public function all state variable from c7 will copy to c4 and tvm.setData will have no effect.",
+                  "insertText": "setData(${1})"
+                },
+                {
+                  "label": "log",
+                  "kind": "Function",
+                  "detail": "tvm.log(string log)",
+                  "documentation": "Dumps log string. This function is wrapper for TVM instructions PRINTSTR (for constant literal strings shorter than 16 symbols) and STRDUMP (for other strings). logtvm is an alias for tvm.log(string).",
+                  "insertText": "log(${1})"
+                },
+                {
+                  "label": "hexdump",
+                  "kind": "Function",
+                  "detail": "tvm.hexdump(T a)",
+                  "documentation": "Dumps cell data or integer. Note that for cells this function dumps data only from the first cell. T must be an integer type or TvmCell.",
+                  "insertText": "hexdump(${1})"
+                },
+                {
+                  "label": "bindump",
+                  "kind": "Function",
+                  "detail": "tvm.bindump(T a)",
+                  "documentation": "Dumps cell data or integer. Note that for cells this function dumps data only from the first cell. T must be an integer type or TvmCell.",
+                  "insertText": "bindump(${1})"
+                },
+                {
+                  "label": "setcode",
+                  "kind": "Function",
+                  "detail": "tvm.setcode(TvmCell newCode)",
+                  "documentation": "This command creates an output action that would change this smart contract code to that given by Cell newCode (this change will take effect only after the successful termination of the current run of the smart contract).",
+                  "insertText": "setcode(${1})"
+                },
+                {
+                  "label": "configParam",
+                  "kind": "Function",
+                  "detail": "tvm.configParam(uint8 paramNumber)",
+                  "documentation": "Executes TVM instruction \"CONFIGPARAM\" (TVM - A.11.4. - F832). This command returns the value of the global configuration parameter with integer index paramNumber. Argument should be an integer literal. Supported paramNumbers: 1, 15, 17, 34.",
+                  "insertText": "configParam(${1})"
+                },
+                {
+                  "label": "rawConfigParam",
+                  "kind": "Function",
+                  "detail": "tvm.rawConfigParam(uint8 paramNumber)",
+                  "documentation": "_",
+                  "insertText": "rawConfigParam(${1})"
+                },
+                {
+                  "label": "rawReserve",
+                  "kind": "Function",
+                  "detail": "tvm.rawReserve(uint value, uint8 flag)\n\ntvm.rawReserve(uint value, ExtraCurrencyCollection currency, uint8 flag)",
+                  "documentation": "Creates an output action which reserves reserve nanotons. It is roughly equivalent to create an outbound message carrying reserve nanotons to oneself, so that the subsequent output actions would not be able to spend more money than the remainder. It's a wrapper for opcodes \"RAWRESERVE\" and \"RAWRESERVEX\".",
+                  "insertText": "rawReserve(${1})"
+                },
+                {
+                  "label": "hash",
+                  "kind": "Function",
+                  "detail": "tvm.hash(TvmCell cellTree)\n\ntvm.hash(string data)\n\ntvm.hash(bytes data)\n\ntvm.hash(TvmSlice data)",
+                  "documentation": "Executes TVM instruction \"HASHCU\" or \"HASHSU\" (TVM - A.11.6. - F900). It computes the representation hash of a given argument and returns it as a 256-bit unsigned integer. For string and bytes it computes hash of the tree of cells, which contains data, but not data itself.",
+                  "insertText": "hash(${1})"
+                },
+                {
+                  "label": "checkSign",
+                  "kind": "Function",
+                  "detail": "tvm.checkSign(uint256 hash, uint256 SignHighPart, uint256 SignLowPart, uint256 pubkey)\n\ntvm.checkSign(uint256 hash, TvmSlice signature, uint256 pubkey)\n\ntvm.checkSign(TvmSlice data, TvmSlice signature, uint256 pubkey)",
+                  "documentation": "Executes TVM instruction \"CHKSIGNU\" (TVM - A.11.6. - F910) for variants 1 and 2. This command checks the Ed25519-signature of a hash using public key pubkey. Signature is represented by two uint256 SignHighPart and SignLowPart in the first variant and by a slice signature in the second variant. In the third variant executes TVM instruction \"CHKSIGNS\" (TVM - A.11.6. - F911). This command checks Ed25519-signature of data using public key pubkey. Signature is represented by a slice signature.",
+                  "insertText": "checkSign(${1})"
+                },
+                {
+                  "label": "insertPubkey",
+                  "kind": "Function",
+                  "detail": "tvm.insertPubkey(TvmCell stateInit, uint256 pubkey)",
+                  "documentation": "Inserts a public key into stateInit data field. If stateInit has wrong format then throws exception.",
+                  "insertText": "insertPubkey((${1})"
+                },
+                {
+                  "label": "buildStateInit",
+                  "kind": "Function",
+                  "detail": "tvm.buildStateInit(TvmCell code, TvmCell data)",
+                  "documentation": "Generates a StateInit (TBLKCH - 3.1.7.) from code and data.",
+                  "insertText": "buildStateInit(${1})"
+                },
+                {
+                  "label": "buildEmptyData",
+                  "kind": "Function",
+                  "detail": "tvm.buildEmptyData(uint256 publicKey)",
+                  "documentation": "Generates a persistent storage of the contract that contains only public key. data can be used to generate StateInit (TBLKCH - 3.1.7.).",
+                  "insertText": "buildEmptyData(${1})"
+                },
+                {
+                  "label": "deploy",
+                  "kind": "Function",
+                  "detail": "tvm.deploy(TvmCell stateInit, TvmCell payload, uint128 value, int8 wid)",
+                  "documentation": "Deploys a new contract and returns the address of the deployed contract. This function may be useful if you want to write a universal contract that can deploy any contract. In another cases, use Deploy via new.",
+                  "insertText": "deploy(${1})"
+                },
+                {
+                  "label": "code",
+                  "kind": "Function",
+                  "detail": "tvm.code()",
+                  "documentation": "Returns contract's code.",
+                  "insertText": "code()"
+                },
+                {
+                  "label": "codeSalt",
+                  "kind": "Function",
+                  "detail": "tvm.codeSalt(TvmCell code)",
+                  "documentation": "If code contains salt then optSalt contains one. Otherwise, optSalt doesn't contain any value.",
+                  "insertText": "codeSalt(${1})"
+                },
+                {
+                  "label": "setCodeSalt",
+                  "kind": "Function",
+                  "detail": "tvm.setCodeSalt(TvmCell code, TvmCell salt)",
+                  "documentation": "Inserts salt into code and returns new code newCode.",
+                  "insertText": "setCodeSalt(${1})"
+                },
+                {
+                  "label": "pubkey",
+                  "kind": "Function",
+                  "detail": "tvm.pubkey()",
+                  "documentation": "Returns contract's public key, stored in contract data. If key is not set, function returns 0.",
+                  "insertText": "pubkey()"
+                },
+                {
+                  "label": "setPubkey",
+                  "kind": "Function",
+                  "detail": "tvm.setPubkey(uint256 newPubkey)",
+                  "documentation": "Set new contract's public key. Contract's public key can be obtained from tvm.pubkey.",
+                  "insertText": "setPubkey(${1})"
+                },
+                {
+                  "label": "setCurrentCode",
+                  "kind": "Function",
+                  "detail": "tvm.setCurrentCode(TvmCell newCode)",
+                  "documentation": "Changes this smart contract current code to that given by Cell newCode. Unlike tvm.setcode() this function changes code of the smart contract only for current TVM execution, but has no effect after termination of the current run of the smart contract.",
+                  "insertText": "setCurrentCode(${1})"
+                },
+                {
+                  "label": "resetStorage",
+                  "kind": "Function",
+                  "detail": "tvm.resetStorage()",
+                  "documentation": "Resets all state variables to their default values.",
+                  "insertText": "resetStorage()"
+                },
+                {
+                  "label": "functionId",
+                  "kind": "Function",
+                  "detail": "tvm.functionId(Name)",
+                  "documentation": "Returns a function id (uint32) for public/external function or constructor.",
+                  "insertText": "functionId(${1})"
+                },
+                {
+                  "label": "encodeBody",
+                  "kind": "Function",
+                  "detail": "tvm.encodeBody(function, arg0, arg1, arg2, ...)\n\ntvm.encodeBody(function, callbackFunction, arg0, arg1, arg2, ...)",
+                  "documentation": "Constructs a function call message body that can be used as the payload for <address>.transfer(). If function is responsible then callbackFunction parameter must be set.",
+                  "insertText": "encodeBody(${1})"
+                },
+                {
+                  "label": "exit",
+                  "kind": "Function",
+                  "detail": "tvm.exit()",
+                  "documentation": "Function are used to save state variables and to quickly terminate execution of the smart contract.\n\nExit codes are equal to zero.",
+                  "insertText": "exit()"
+                },
+                {
+                  "label": "exit1",
+                  "kind": "Function",
+                  "detail": "tvm.exit1()",
+                  "documentation": "Function are used to save state variables and to quickly terminate execution of the smart contract.\n\nExit codes are equal to one.",
+                  "insertText": "exit1()"
+                },
+                {
+                  "label": "buildExtMsg",
+                  "kind": "Function",
+                  "detail": "tvm.buildExtMsg({\n\tdest: address,\n\ttime: uint64,\n\texpire: uint32,\n\tcall: {functionIdentifier [, list of function arguments]},\n\tsign: bool,\n\tpubkey: optional(uint256),\n\tabiVer: uint8,\n\tcallbackId: uint32,\n\tonErrorId: uint32,\n\tstateInit: TvmCell,\n\tsignBoxHandle: optional(uint32)\n\n})",
+                  "documentation": "Function should be used only offchain and intended to be used only in debot contracts. Allows creating an external inbound message, that calls the func function of the contract on address destination with specified function arguments.",
+                  "insertText": "buildExtMsg(${1})"
+                },
+                {
+                  "label": "buildIntMsg",
+                  "kind": "Function",
+                  "detail": "tvm.buildIntMsg({\n\tdest: address,\n\tvalue: uint128,\n\tcall: {function, [callbackFunction,] arg0, arg1, arg2, ...},\n\tbounce: bool,\n\tcurrencies: ExtraCurrencyCollection\n\n})",
+                  "documentation": "Generates an internal outbound message that contains function call. The cell can be used to send a message using tvm.sendrawmsg(). If the function is responsible then callbackFunction parameter must be set.",
+                  "insertText": "buildIntMsg(${1})"
+                },
+                {
+                  "label": "sendrawmsg",
+                  "kind": "Function",
+                  "detail": "tvm.sendrawmsg(TvmCell msg, uint8 flag)",
+                  "documentation": "Send the internal/external message msg with flag. It's wrapper for opcode SENDRAWMSG (TVM - A.11.10). Internal message msg can be generated by tvm.buildIntMsg().",
+                  "insertText": "sendrawmsg(${1})"
+                }
+              ],
+              "detail": "tvm",
+              "insertText": "tvm"
+            },
+            {
+              "label": "math",
+              "type": 0,
+              "kind": 10,
+              "data": [
+                {
+                  "label": "min",
+                  "kind": "Function",
+                  "detail": "math.min(T a, T b, ...)",
+                  "documentation": "Returns the minimal value of the passed arguments. T should be an integer or fixed point type.",
+                  "insertText": "min(${1})"
+                },
+                {
+                  "label": "max",
+                  "kind": "Function",
+                  "detail": "math.max(T a, T b, ...)",
+                  "documentation": "Returns the maximal value of the passed arguments. T should be an integer or fixed point type.",
+                  "insertText": "max(${1})"
+                },
+                {
+                  "label": "minmax",
+                  "kind": "Function",
+                  "detail": "math.minmax(T a, T b)",
+                  "documentation": "Returns minimal and maximal values of the passed arguments. T should be an integer or fixed point type.",
+                  "insertText": "minmax(${1})"
+                },
+                {
+                  "label": "abs",
+                  "kind": "Function",
+                  "detail": "math.abs(intM val)\n\nmath.abs(fixedMxN val)",
+                  "documentation": "Computes the absolute value of the given integer.",
+                  "insertText": "abs(${1})"
+                },
+                {
+                  "label": "modpow2",
+                  "kind": "Function",
+                  "detail": "math.modpow2(uint value, uint power)",
+                  "documentation": "Computes the value modulo 2^power. Note that power should be a constant integer.",
+                  "insertText": "modpow2(${1})"
+                },
+                {
+                  "label": "divr",
+                  "kind": "Function",
+                  "detail": "math.divr(T a, T b)",
+                  "documentation": "Returns result of the division of two integers. T should be an integer or fixed point type.\n\nThe return value is rounded. ceiling modes.",
+                  "insertText": "divr(${1})"
+                },
+                {
+                  "label": "divc",
+                  "kind": "Function",
+                  "detail": "math.divc(T a, T b)",
+                  "documentation": "Returns result of the division of two integers. T should be an integer or fixed point type.\n\nThe return value is rounded. nearest modes.",
+                  "insertText": "divc(${1})"
+                },
+                {
+                  "label": "muldiv",
+                  "kind": "Function",
+                  "detail": "math.muldiv(T a, T b, T c)",
+                  "documentation": "Multiplies two values and then divides the result by a third value. T is integer type.\n\nThe return value is rounded. floor modes",
+                  "insertText": "muldiv(${1})"
+                },
+                {
+                  "label": "muldivr",
+                  "kind": "Function",
+                  "detail": "math.muldivr(T a, T b, T c)",
+                  "documentation": "Multiplies two values and then divides the result by a third value. T is integer type.\n\nThe return value is rounded. ceiling modes",
+                  "insertText": "muldivr(${1})"
+                },
+                {
+                  "label": "muldivc",
+                  "kind": "Function",
+                  "detail": "math.muldivc(T a, T b, T c)",
+                  "documentation": "Multiplies two values and then divides the result by a third value. T is integer type.\n\nThe return value is rounded. nearest modes",
+                  "insertText": "muldivc(${1})"
+                },
+                {
+                  "label": "muldivmod",
+                  "kind": "Function",
+                  "detail": "math.muldivmod(T a, T b, T c)",
+                  "documentation": "This instruction multiplies first two arguments, divides the result by third argument and returns the result and the remainder. Intermediate result is stored in the 514 bit buffer, and the final result is rounded to the floor.",
+                  "insertText": "muldivmod(${1})"
+                },
+                {
+                  "label": "divmod",
+                  "kind": "Function",
+                  "detail": "math.divmod(T a, T b)",
+                  "documentation": "This instruction divides the first number by the second one and returns the result and the remainder. Result is rounded to the floor. T is integer type.",
+                  "insertText": "divmod(${1})"
+                },
+                {
+                  "label": "sign",
+                  "kind": "Function",
+                  "detail": "math.sign(int val)",
+                  "documentation": "Returns number in case of sign of the argument value val:\n\n-1 if val is negative;\n\n0 if val is zero;\n\n1 if val is positive.",
+                  "insertText": "sign(${1})"
+                }
+              ],
+              "detail": "math",
+              "insertText": "math"
+            },
+            {
+              "label": "tx",
+              "type": 0,
+              "kind": 10,
+              "data": [
+                {
+                  "label": "timestamp",
+                  "kind": "Function",
+                  "detail": "tx.timestamp",
+                  "documentation": "Returns the logical time of the current transaction.",
+                  "insertText": "timestamp"
+                }
+              ],
+              "detail": "tx",
+              "insertText": "tx"
+            },
+            {
+              "label": "block",
+              "type": 0,
+              "kind": 10,
+              "data": [
+                {
+                  "label": "timestamp",
+                  "kind": "Function",
+                  "detail": "block.timestamp",
+                  "documentation": "Returns the starting logical time of the current block.",
+                  "insertText": "timestamp"
+                }
+              ],
+              "detail": "block",
+              "insertText": "block"
+            },
+            {
+              "label": "rnd",
+              "type": 0,
+              "kind": 10,
+              "data": [
+                {
+                  "label": "next",
+                  "kind": "Function",
+                  "detail": "rnd.next(Type limit])",
+                  "documentation": "Generates a new pseudo-random number.",
+                  "insertText": "next(${1})"
+                },
+                {
+                  "label": "getSeed",
+                  "kind": "Function",
+                  "detail": "rnd.getSeed()",
+                  "documentation": "Returns the current random seed.",
+                  "insertText": "getSeed()"
+                },
+                {
+                  "label": "setSeed",
+                  "kind": "Function",
+                  "detail": "rnd.setSeed(uint256 x)",
+                  "documentation": "Sets the random seed to x.",
+                  "insertText": "setSeed(${1})"
+                },
+                {
+                  "label": "shuffle",
+                  "kind": "Function",
+                  "detail": "rnd.shuffle(uint someNumber)\n\nrnd.shuffle()",
+                  "documentation": "Randomizes the random seed.",
+                  "insertText": "shuffle(${1})"
+                }
+              ],
+              "detail": "rnd",
+              "insertText": "rnd"
+            }
+          ],
+          "description": "IntelliSense."
+        },
+        "soliditytop.binPath": {
+          "type": "string",
+          "default": "",
+          "description": ""
+        },
+        "soliditytop.args": {
+          "type": "array",
+          "default": [],
+          "description": ""
+        },
+        "soliditytop.startOn": {
+          "type": "string",
+          "enum": [
+            "open-script",
+            "interaction"
+          ],
+          "default": "interaction",
+          "markdownDescription": ""
+        },
+        "solidity.format.indentAfterBullet": {
+          "type": "string",
+          "enum": [
+            "none",
+            "indent",
+            "align"
+          ],
+          "default": "none",
+          "markdownDescription": "Control how to indent the line after a bullet. `none` - no indent; `indent` - tab-indent; `align` - align to the previous line's tactic"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.solidity.quit",
+        "title": "Quit",
+        "category": "Solidity"
+      },
+      {
+        "command": "extension.solidity.reset",
+        "title": "Reset",
+        "category": "Solidity"
+      },
+      {
+        "command": "extension.solidity.display.toggle.implicitArguments",
+        "title": "Display Implicit Arguments",
+        "category": "Solidity"
+      },
+      {
+        "command": "extension.solidity.test",
+        "title": "Test",
+        "category": "Solidity"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "shift+alt+o",
+        "mac": "shift+ctrl+o",
+        "command": "extension.solidity.test",
+        "when": "editorTextFocus && editorLangId == solidity"
+      },
+      {
+        "key": "shift+alt+o",
+        "mac": "shift+ctrl+o",
+        "command": "extension.solidity.test",
+        "when": "resourceScheme==solidity-view"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == solidity",
+          "command": "extension.solidity.test",
+          "group": "solidity"
+        }
+      ]
+    },
+    "colors": [
+      {}
+    ]
+  },
+  "main": "./out/src/src/extension",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "test": "node ./node_modules/vscode/bin/test",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "@types/diff": "^4.0.2",
+    "@types/glob": "^7.1.1",
+    "@types/jquery": "^3.3.31",
+    "@types/mocha": "^5.2.7",
+    "@types/mustache": "4.0.0",
+    "@types/node": "^13.1.6",
+    "@types/sax": "^1.2.0",
+    "@types/semver": "^6.2.0",
+    "@types/ws": "^7.2.0",
+    "@types/xml2js": "^0.4.5",
+    "jquery": "^3.5.0",
+    "ts-loader": "^6.2.1",
+    "ts-prune": "^0.3.0",
+    "typescript": "^3.7.5",
+    "vsce": "^1.75.0",
+    "vscode": "^1.1.37",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "bufferutil": "^4.0.1",
+    "copy-webpack-plugin": "^5.1.2",
+    "diff": "4.0.2",
+    "mustache": "^4.0.0",
+    "pegjs": "^0.10.0",
+    "sax": "^1.2.4",
+    "semver": "^7.1.1",
+    "string-argv": "^0.3.1",
+    "utf-8-validate": "^5.0.2",
+    "vscode-jsonrpc": "^4.0.0",
+    "vscode-languageclient": "^5.2.1",
+    "vscode-languageserver": "^5.2.1",
+    "ws": "^7.2.1",
+    "xml2js": "^0.4.23"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "composite": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "../server" }]
+}

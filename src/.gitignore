@@ -1,0 +1,8 @@
+.DS_Store
+
+out
+server
+node_modules
+.testUser
+*.vsix
+*.zip

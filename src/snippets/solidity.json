@@ -1,0 +1,193 @@
+{
+	".source.solidity": {
+		"contract declaration": {
+			"prefix": "contract",
+			"body": "contract ${1:Name} {\n\t$0\n}"
+		},
+		"constructor declaration": {
+			"prefix": "constructor",
+			"body": "constructor (${1:type} ${2:name}) public {\n\t$0\n}"
+		},
+		"enum declaration": {
+			"prefix": "enum",
+			"body": "enum ${1:Name} {${2:item1}, ${3:item2} }"
+		},
+		"error declaration": {
+			"prefix": "error",
+			"body": "error ${1:name}(${2:type} ${3:name} $0);"
+        },
+		"event declaration": {
+			"prefix": "event",
+			"body": "event ${1:name}(${2:type} ${3:name} $0);"
+        },
+		"for statement": {
+			"prefix": "for",
+			"body": "for (uint256 ${1:index} = 0; $1 < ${2:array}.length; $1${3:++}) {\n\t$0\n}"
+		},
+		"function declaration": {
+			"prefix": "function",
+			"body": "function ${1:name}(${2:type} ${3:name}) {\n\t$0\n}"
+		},
+        "function return declaration": {
+			"prefix": "function-return",
+			"body": "function ${1:name}(${2:type} ${3:name}) returns (${4:type} ${5:name}) {\n\t$0\n}"
+		}
+        ,
+        "function view declaration": {
+			"prefix": "function-view",
+			"body": "function ${1:name}(${2:type} ${3:name}) public view ${4:name} {\n\t$0\n}"
+        },
+        "function view return declaration": {
+			"prefix": "function-view-return",
+			"body": "function ${1:name}(${2:type} ${3:name}) public view responsible returns (${4:type} ${5:name}}) {\n\t$0\n}"
+        },
+		"function pure declaration": {
+			"prefix": "function-pure",
+			"body": "function ${1:name}(${2:type} ${3:name}) public pure ${4:name} {\n\t$0\n}"
+        },
+		"function pure return declaration": {
+			"prefix": "function-pure-return",
+			"body": "function ${1:name}(${2:type} ${3:name}) public pure responsible returns (${4:type} ${5:name}) {\n\t$0\n}"
+        },
+
+		"function inline return declaration": {
+			"prefix": "function-inline-return",
+			"body": "function ${1:name}(${2:type} ${3:name}) private inline returns (${4:type} ${5:name}) {\n\t$0\n}"
+		},
+		"function functionID declaration": {
+			"prefix": "function-functionID",
+			"body": "function ${1:name}(${2:type} ${3:name}) public functionID(${4:value}) {\n\t$0\n}"
+		},
+		"function externalMsg declaration": {
+			"prefix": "function-externalMsg",
+			"body": "function ${1:name}(${2:type} ${3:name}) public externalMsg {\n\t$0\n}"
+		},
+		"function internalMsg declaration": {
+			"prefix": "function-internalMsg",
+			"body": "function ${1:name}(${2:type} ${3:name}) public internalMsg {\n\t$0\n}"
+		},
+		"if statement": {
+			"prefix": "if",
+			"body": "if (${1:condition}) {\n\t$2\n}"
+		},
+		"if else statement": {
+			"prefix": "ife",
+			"body": "if (${1:condition}) {\n\t$2\n} else {\n\t$0\n}"
+		},
+		"import": {
+			"prefix": "import",
+			"body": "import '${1:contract}';"
+		},
+		"interface declaration": {
+			"prefix": "interface",
+			"body": "interface ${1:Name} {\n\t$0function ${2:name}(${3:type} ${4:name}) external;\n}"
+		},
+		"interface returns declaration": {
+			"prefix": "interface-returns",
+			"body": "interface ${1:Name} {\n\t$0function ${2:name}(${3:type} ${4:name}) external ${5:name} returns (${6:type});\n}"
+		},
+		"library declaration": {
+			"prefix": "library",
+			"body": "library ${1:Name} {\n\t$0\n}"
+		},
+        "mapping declaration":{
+            "prefix": "mapping",
+			"body": "mapping (${1:type1}=>${2:type2}) ${3:name};"
+		},
+        "modifier declaration": {
+			"prefix": "modifier",
+			"body": "modifier ${1:name}($2) {\n\t$0_\n}"
+        },
+		"pragma ton-solidity":{
+			"prefix": "pragma",
+			"body": "pragma ton-solidity ${1|>=,^,~|} ${2:version};",
+			"description": "pragma keyword is used to enable certain compiler features or checks. A pragma directive is always local to a source file, so you have to add the pragma to all your files if you want to enable it in your whole project. If you import another file, the pragma from that file is not automatically applied to the importing file."
+		},
+		"pragma ton-solidity example":{
+			"prefix": "pragma-ex",
+			"body": "pragma ton-solidity >= 0.35.5; // Check compiler version is at least 0.35.5\npragma ton-solidity ^ 0.35.5; // Check compiler version is at least 0.35.5 and less 0.36.0\npragma ton-solidity < 0.35.5; // Check compiler version is less 0.35.5\npragma ton-solidity >= 0.35.5 < 0.35.7; // Check compiler version equal to 0.35.5 or 0.35.6"
+		},
+		"pragma ignoreIntOverflow":{
+			"prefix": "pragma-ig",
+			"body": "pragma ignoreIntOverflow;",
+			"description": "Turns off binary operation result overflow check."
+		},
+		"pragma AbiHeader":{
+			"prefix": "pragma-ab",
+			"body": "pragma AbiHeader ${1|pubkey,time,expire|};",
+			"description": "Force message forming utility to fill an appropriate field(s) in the header of the exteranl inbound message to be sent to this contract:\npubkey - public key by which the message can be signed;\ntime - local time at what message was created;\nexpire - time at which message should be meant as expired."
+		},
+		"pragma msgValue":{
+			"prefix": "pragma-ms",
+			"body": "pragma msgValue ${1:value};",
+			"description": "Allows specifying default value in nanotons attached to the internal messages that contract sends to call another contract. If it's not specified, this value is set to 10 000 000 nanotons.\n\nExample:\n\npragma msgValue 123456789;\npragma msgValue 1e8;\npragma msgValue 10 ton;\npragma msgValue 10_000_000_123;"
+		},
+		"require": {	
+			"prefix": "require",
+			"body": "require(${1:name} ${2|==,!=|} ${3:value});",
+			"description": "A literal number can take a suffix to specify a subdenomination of TON currency, where numbers without a postfix are assumed to be nanotons."	
+		},
+		"unchecked" : {
+			"prefix": "unchecked",
+			"body": "unchecked {\n\t$0\n}"
+		},
+
+		"receive declaration": {
+			"prefix": "receive",
+			"body": "receive() external {\n\t$0\n}",
+			"description": "receive function is called in 2 cases:\n\n1. msg.data (or message body) is empty.\n\n2. msg.data starts with 32-bit zero. Then message body may contain data, for example string with comment.\n\nIf in the contract there is no receive function then the contract has an implicit empty receive function."
+		},
+		"fallback declaration": {
+			"prefix": "fallback",
+			"body": "fallback() external {\n\t$0\n}",
+			"description": "fallback function is called when a body of an inbound internal/external message in such cases:\n\n1. The message contains a function id that the contract doesn't contain.\n\n2. Bit length of message between 1 and 31 (including).\n\n3. Bit length of message equals to zero, but the message contains reference(s).\n\nNote: if the message has correct function id but invalid encoded function's parameters then the transaction fail with some exception (e.g. cell underflow exception).\n\nIf in the contract there is no fallback function then contract has implicit fallback function that throws exception."
+		},
+		"onBounce declaration": {
+			"prefix": "onBounce",
+			"body": "onBounce(TvmSlice ${1:body}) external {\n\t$0\n}",
+			"description": "onBounce function is executed when contract receives a bounced inbound internal message. The message is generated by the network if the contract sends an internal message with bounce: trueand\n\n- called contract doesn't exist;\n\n- called contract fails at storage/credit/computing phase (not at action phase!).\n\nThe message is generated only if the remaining message value is enough for sending one back.\n\nbody is empty or contains at most 256 data bits of the original message (without references). The function id takes 32 bits and parameters can take at most 224 bits. It depends on the network config. If onBounce function is not defined then the contract does nothing on receiving a bounced inbound internal message.\n\nIf the onBounce function throws an exception then another bounced messages are not generated."
+		},
+		"onTickTock declaration": {
+			"prefix": "onTickTock",
+			"body": "onTickTock(bool ${1:name}) external {\n\t$0\n}",
+			"description": "onTickTock function is executed on tick/tock transaction. That transactions are automatically invoked for certain special accounts. For tick transactions isTock is false, for tock transactions - true."
+		},
+		"onCodeUpgrade declaration": {
+			"prefix": "onCodeUpgrade",
+			"body": "onCodeUpgrade() private {\n\t$0\n}",
+			"description": "onCodeUpgrade function can have arbitrary set of arguments and should be executed after tvm.setcode() function call. In this function tvm.resetStorage() should be called if the set of state variables is changed in the new version of the contract. This function implicitly calls tvm.commit(). Then return from onCodeUpgrade TVM execution is finished with exit code 0."
+		},
+		"afterSignatureCheck declaration": {
+			"prefix": "afterSignatureCheck",
+			"body": "afterSignatureCheck(TvmSlice ${1:body}, TvmCell ${2:message}) private inline returns (TvmSlice) {\n\t$0\n}",
+			"description": "afterSignatureCheck function is used to define custom replay protection function instead of the default one. Never call tvm.commit() or tvm.accept() in the function because the function can be called before calling constructor."
+		},
+
+		"selfdestruct declaration": {
+			"prefix": "selfdestruct",
+			"body": "selfdestruct(${1:type} ${2:name});",
+			"description": "Creates and sends the message that carries all the remaining balance of the current smart contract and destroys the current account."
+		},
+		"sha256 declaration": {
+			"prefix": "sha256",
+			"body": "sha256(${1:type} ${2:name}) returns (${3:type});",
+			"description": "Compute the SHA-256 hash."
+		},
+		"gasToValue declaration": {
+			"prefix": "gasToValue",
+			"body": "gasToValue(${1:type} ${2:name}, ${3:type} ${4:name}) returns (${5:type} ${6:name});",
+			"description": "Returns worth of gas in workchain wid. Throws an exception if wid doesn't equal 0 and -1."
+		},
+		"valueToGas declaration": {
+			"prefix": "valueToGas",
+			"body": "valueToGas(${1:type} ${2:name}, ${3:type} ${4:name}) returns (${5:type} ${6:name});",
+			"description": "Returns how much gas could be bought on value nanotons in workchain wid. Throws an exception if wid doesn't equal 0 and -1."
+		},
+
+		"help runtime error codes": {
+			"prefix": "help-runtime-error-codes", 
+			"body": "/*\n\nSolidity runtime error codes\n\n40 - External inbound message has an invalid signature. See tvm.pubkey() and msg.pubkey().\n50 - Array index or index of <mapping>.at() is out of range.\n51 - Calling of contract's constructor that has already been called.\n52 - Replay protection exception. See timestamp in pragma AbiHeader.\n53 - See <address>.unpack().\n54 - Calling <array>.pop for empty array.\n55 - See tvm.insertPubkey().\n57 - External inbound message is expired. See expire in pragma AbiHeader.\n58 - External inbound message has no signature but has public key. See pubkey in pragma AbiHeader.\n60 - Inbound message has wrong function id. In contract there are no functions with such function id and there is no fallback function which could handle the message. See fallback.\n61 - Deploying StateInit has no public key in data field.\n62 - Reserved for internal usage.\n63 - See <optional(Type)>.get().\n64 - tvm.buildExtMSg() call with wrong parameters. See tvm.buildExtMsg().\n65 - Calling of unassigned variable of function type. See Function type.\n66 - Converting an integer to a string with width less than number length. See format().\n67 - See gasToValue and valueToGas.\n68 - There is no config parameter 20 or 21.\n69 - Calculating zero to the power of zero (0**0 in solidity style or 0^0).\n70 - string method substr was called with substr longer than the whole string.\n71 - Function marked by externalMsg is called by internal message.\n72 - Function marked by internalMsg is called by external message.\n73 - The value can't be converted to enum type.\n74 - Await answer message has wrong source address.\n75 - Await answer message has wrong function id.\n76 - Public function was called before constructor.\n\n*/"
+		}
+
+    }
+}
